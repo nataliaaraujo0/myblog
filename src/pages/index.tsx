@@ -5,6 +5,7 @@ import { Empty } from "../components/Empty";
 import { Layout } from "../components/Layout";
 import { ListRepositories } from "../components/ListRepositories";
 import { PaginationItem } from "../components/PaginationItem/PaginationItem";
+import { Resume } from "../components/Resume";
 import { SkeletonRepo } from "../components/SkeletonRepo";
 
 export default function Home() {
@@ -17,9 +18,10 @@ export default function Home() {
         data?.length === 0 ? <Empty /> : <ListRepositories repos={data} />
       } */
 
-        children={
+        firstChild={
           isLoading ? <SkeletonRepo /> : <ListRepositories repos={data} />
         }
+        secondChild={<Resume />}
       />
     </>
   );
