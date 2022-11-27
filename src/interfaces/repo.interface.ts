@@ -1,4 +1,5 @@
 export interface RepoProps {
+  id: number;
   name: string;
   full_name: string;
   description?: string;
@@ -6,6 +7,7 @@ export interface RepoProps {
   homepage?: string;
 }
 
-export interface RepoData {
-  repoData: RepoProps[];
+export interface ListRepositoriesProps {
+  repos?: RepoProps[];
+  onClick?: () => void;
 }

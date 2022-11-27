@@ -1,0 +1,68 @@
+import { SimpleGrid, Skeleton } from "@chakra-ui/react";
+
+export const SkeletonRepo = () => {
+  return (
+    <SimpleGrid
+      spacing={4}
+      templateColumns="repeat(auto-fill, minmax(220px, 1fr))"
+    >
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+        borderRadius="4px"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+        borderRadius="4px"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+        borderRadius="4px"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+      ></Skeleton>
+      <Skeleton
+        w="289px"
+        height="162px"
+        endColor="#6753a7"
+        startColor="#44337a"
+      ></Skeleton>
+    </SimpleGrid>
+  );
+};

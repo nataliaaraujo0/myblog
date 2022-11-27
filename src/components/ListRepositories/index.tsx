@@ -1,6 +1,5 @@
 import {
   Badge,
-  Box,
   Card,
   CardBody,
   CardFooter,
@@ -9,18 +8,23 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { RepoData } from "../../interfaces/repo.interface";
+import { ListRepositoriesProps } from "../../interfaces/repo.interface";
 import { TagGroup } from "../TagGroup";
-export const ListRepositories = ({ repoData = [] }: RepoData) => {
+
+export const ListRepositories = ({
+  repos = [],
+  onClick,
+  ...rest
+}: ListRepositoriesProps) => {
   return (
     <>
       <SimpleGrid
         spacing={4}
         templateColumns="repeat(auto-fill, minmax(220px, 1fr))"
       >
-        {repoData.map((repo) => {
+        {repos.map((repo) => {
           return (
-            <Card bg="purple.800">
+            <Card bg="purple.800" onClick={onClick} key={repo.id} {...rest}>
               <CardHeader>
                 <Heading size="md" color="#ffdc86">
                   {repo.name}
@@ -34,8 +38,6 @@ export const ListRepositories = ({ repoData = [] }: RepoData) => {
               <CardFooter w="30px">
                 <Badge variant="outline" colorScheme="green">
                   link vercel
-                  {/*                   {repo.homepage}
-                   */}{" "}
                 </Badge>
               </CardFooter>
             </Card>
