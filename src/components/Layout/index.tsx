@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { Sidebar } from "../Sidebar";
 import { Search } from "../Search";
@@ -14,6 +14,10 @@ export const Layout = ({ children }: LayoutProps) => {
       </Flex>
       <Flex w="900px" h="800px" direction="column">
         <Search style={{ marginBottom: "32px" }} />
+        <Heading fontSize="1.8rem" style={{ marginBottom: "16px" }}>
+          Projetos
+        </Heading>
+
         {children}
       </Flex>
     </Flex>
