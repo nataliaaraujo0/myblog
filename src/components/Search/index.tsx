@@ -1,14 +1,4 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Input,
-  InputGroup,
-  InputLeftElement,
-} from "@chakra-ui/react";
-import { ReactElement } from "react";
-import { Sidebar } from "../Sidebar";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { MagnifyingGlass } from "phosphor-react";
 
 export const Search = ({ ...rest }) => {

@@ -1,25 +1,31 @@
-import { Box, Image, Tag, TagLabel } from "@chakra-ui/react";
+import { Avatar, Box, Tag, TagLabel } from "@chakra-ui/react";
 
 const tags = [
-  { id: 1, title: "React Js", icon: "/react.svg" },
-  { id: 2, title: "Typescript", icon: "/typescript.svg" },
-  { id: 2, title: "Typescript", icon: "/typescript.svg" },
+  { title: "React", img: "/react.svg" },
+  { title: "Typesscript", img: "/typescript.svg" },
+  { title: "Styled Component", img: "/styledcomponent.svg" },
+  { title: "GraphQl", img: "/graphql.svg" },
+  { title: "NextJs", img: "/next.svg" },
 ];
-export const TagGroup = () => {
+
+type tags = {
+  title: string;
+  img: string;
+};
+type TagGroupProps = {
+  tags: tags[];
+};
+export const TagGroup = ({}: TagGroupProps) => {
   return (
-    <>
-      <Tag size="lg" colorScheme="red" borderRadius="full" margin="2px">
-        <Image src="/typescript.svg" alt="Dan Abramov" w="30px" />
-        <TagLabel>asdasd</TagLabel>
-      </Tag>
-      <Tag size="lg" colorScheme="red" borderRadius="full" margin="2px">
-        <Image src="/typescript.svg" alt="Dan Abramov" w="30px" />
-        <TagLabel>asdasd</TagLabel>
-      </Tag>
-      <Tag size="lg" colorScheme="red" borderRadius="full" margin="2px">
-        <Image src="/graphql.svg" alt="Dan Abramov" w="30px" />
-        <TagLabel>asdasd</TagLabel>
-      </Tag>
-    </>
+    <Box>
+      {tags.map((tag) => {
+        return (
+          <Tag size="lg" variant="outline" bg="purple.800" margin="2px">
+            <Avatar src={tag.img} size="xs" ml={-1} mr={2} />
+            <TagLabel>{tag.title}</TagLabel>
+          </Tag>
+        );
+      })}
+    </Box>
   );
 };

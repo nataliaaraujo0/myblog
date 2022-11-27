@@ -1,6 +1,5 @@
 import {
   Badge,
-  Button,
   Card,
   CardBody,
   CardFooter,
@@ -29,7 +28,41 @@ export const ListRepositories = () => {
           </CardBody>
           <CardFooter>
             <Badge variant="outline" colorScheme="green">
-              Default
+              Link do deploy
+            </Badge>
+          </CardFooter>
+        </Card>
+        <Card bg="purple.800">
+          <CardHeader>
+            <Heading size="md" color="#ffdc86">
+              Customer dashboard
+            </Heading>
+          </CardHeader>
+          <CardBody>
+            <Text color="#dbd4c1">
+              View a summary of all your customers over the last month.
+            </Text>
+          </CardBody>
+          <CardFooter>
+            <Badge variant="outline" colorScheme="green">
+              Link do deploy
+            </Badge>
+          </CardFooter>
+        </Card>
+        <Card bg="purple.800">
+          <CardHeader>
+            <Heading size="md" color="#ffdc86">
+              Customer dashboard
+            </Heading>
+          </CardHeader>
+          <CardBody>
+            <Text color="#dbd4c1">
+              View a summary of all your customers over the last month.
+            </Text>
+          </CardBody>
+          <CardFooter>
+            <Badge variant="outline" colorScheme="green">
+              Link do deploy{" "}
             </Badge>
           </CardFooter>
         </Card>
