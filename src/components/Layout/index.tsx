@@ -12,7 +12,7 @@ export const Layout = ({ children }: LayoutProps) => {
       <Flex w="300px" h="800px">
         <Sidebar />
       </Flex>
-      <Flex w="900px" h="800px" direction="column">
+      <Flex w="900px" direction="column">
         <Search style={{ marginBottom: "32px" }} />
         <Heading fontSize="1.8rem" style={{ marginBottom: "16px" }}>
           Projetos

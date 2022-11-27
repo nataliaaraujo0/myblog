@@ -1,6 +1,6 @@
 import { Avatar, Box, Tag, TagLabel } from "@chakra-ui/react";
 
-const tags = [
+const tagsMock = [
   { title: "React", img: "/react.svg" },
   { title: "Typesscript", img: "/typescript.svg" },
   { title: "Styled Component", img: "/styledcomponent.svg" },
@@ -15,10 +15,10 @@ type tags = {
 type TagGroupProps = {
   tags: tags[];
 };
-export const TagGroup = ({}: TagGroupProps) => {
+export const TagGroup = ({ tags = tagsMock }: TagGroupProps) => {
   return (
     <Box>
-      {tags.map((tag) => {
+      {tagsMock.map((tag) => {
         return (
           <Tag size="lg" variant="outline" bg="purple.800" margin="2px">
             <Avatar src={tag.img} size="xs" ml={-1} mr={2} />
