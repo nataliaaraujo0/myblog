@@ -2,6 +2,8 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { Sidebar } from "../Sidebar";
 import { Search } from "../Search";
+import { PaginationItem } from "../PaginationItem/PaginationItem";
+import { Pagination } from "../PaginationItem";
 
 type LayoutProps = {
   children: ReactElement;
@@ -12,13 +14,16 @@ export const Layout = ({ children }: LayoutProps) => {
       <Flex w="300px" h="800px">
         <Sidebar />
       </Flex>
-      <Flex w="900px" direction="column">
-        <Search style={{ marginBottom: "32px" }} />
-        <Heading fontSize="1.8rem" style={{ marginBottom: "16px" }}>
-          Projetos
-        </Heading>
+      <Flex direction="column">
+        <Flex w="900px" direction="column">
+          <Search style={{ marginBottom: "32px" }} />
+          <Heading fontSize="1.8rem" style={{ marginBottom: "16px" }}>
+            Projetos
+          </Heading>
 
-        {children}
+          {children}
+        </Flex>
+        <Pagination />
       </Flex>
     </Flex>
   );

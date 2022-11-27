@@ -6,10 +6,16 @@ export const Search = ({ ...rest }) => {
     <>
       <InputGroup w="20rem" {...rest}>
         <InputLeftElement
-          pointerEvents="none"
           children={<MagnifyingGlass size={22} weight="bold" />}
         />
-        <Input type="tel" placeholder="Search" />
+        <Input
+          __css={{ color: "blue" }}
+          placeholder="Search"
+          variant="filled"
+          bg="#be396c"
+          _hover={{ background: "#e73e80" }}
+          _focus={{ background: "#e73e80" }}
+        />
       </InputGroup>
     </>
   );
