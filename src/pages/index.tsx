@@ -1,3 +1,6 @@
+import { Layout } from "../components/Layout";
+import { ListRepositories } from "../components/ListRepositories";
+
 export default function Home() {
-  return <h1>Boilerplate Nextjs</h1>;
+  return <Layout children={<ListRepositories />} />;
 }
