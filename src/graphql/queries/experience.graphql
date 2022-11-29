@@ -1,0 +1,8 @@
+query MyExperiences {
+  experiences(orderBy: publishedAt_DESC) {
+    company
+    startDate
+    tasks
+    endDate
+  }
+}

@@ -7,10 +7,10 @@ import { ListRepositories } from "../components/ListRepositories";
 import { PaginationItem } from "../components/PaginationItem/PaginationItem";
 import { Resume } from "../components/Resume";
 import { SkeletonRepo } from "../components/SkeletonRepo";
+import { useMyExperiencesQuery } from "../generated/graphql";
 
 export default function Home() {
-  const { data, isLoading } = useQuery("repo", api.getRepos);
-  // const data = [];
+  const { isLoading, data } = useQuery("repo", api.getRepos);
   return (
     <>
       <Layout
