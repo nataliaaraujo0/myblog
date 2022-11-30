@@ -24,10 +24,10 @@ export const Layout = ({ firstChild, secondChild }: LayoutProps) => {
         <Flex w="900px" direction="column">
           <Search style={{ marginBottom: "32px" }} />
 
-          <Tabs variant="soft-rounded" colorScheme="green">
+          <Tabs variant="soft-rounded" colorScheme="purple">
             <TabList>
-              <Tab borderRadius="4px">PROJETOS</Tab>
-              <Tab borderRadius="4px">CURRICULO</Tab>
+              <Tab borderRadius="4px">Projetos do Github</Tab>
+              <Tab borderRadius="4px">Experiência</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>{firstChild}</TabPanel>

@@ -1,8 +1,12 @@
 import {
+  Badge,
+  Box,
   Card,
   CardBody,
   CardHeader,
+  Flex,
   Heading,
+  Highlight,
   ListItem,
   Stack,
   Text,
@@ -15,6 +19,7 @@ export interface IExperience {
   startDate?: string;
   tasks?: string[];
   endDate?: string;
+  occupation?: string;
 }
 
 interface ExperienceProps {
@@ -25,17 +30,25 @@ export const Experience = ({ experiences = [] }: ExperienceProps) => {
   return (
     <Stack spacing="4">
       {experiences?.map((experience) => (
-        <Card bg="purple.800" key={experience.id}>
-          <CardHeader>
-            <Heading size="md" color="#ffdc86">
+        <Card bg="purple.800" padding="1rem" key={experience.id}>
+          <Flex alignItems="center">
+            <Heading size="md" color="#ffdc86" marginRight="0.5rem">
               {experience.company}
             </Heading>
-          </CardHeader>
+            <Text fontWeight="semibold" color="#df82a6" marginRight="0.5rem">
+              - {experience.occupation}
+            </Text>
+
+            <Text color="#b1b0ae">
+              ( {experience.startDate} - {experience.endDate} )
+            </Text>
+          </Flex>
+
           <CardBody>
-            <Text color="#dbd4c1">{experience.startDate}</Text>
             <UnorderedList>
               <ListItem color="green.400">{experience.tasks}</ListItem>
             </UnorderedList>
+            {/*  <Badge colorScheme="green">Success</Badge> */}
           </CardBody>
         </Card>
       ))}

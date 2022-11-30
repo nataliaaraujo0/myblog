@@ -1360,6 +1360,7 @@ export type Experience = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  occupation?: Maybe<Scalars['String']>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
@@ -1369,7 +1370,7 @@ export type Experience = Node & {
   stage: Stage;
   /** data de inicio */
   startDate?: Maybe<Scalars['Date']>;
-  tasks: Array<Scalars['String']>;
+  tasks?: Maybe<Scalars['String']>;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
   /** User that last updated this document */
@@ -1443,8 +1444,9 @@ export type ExperienceCreateInput = {
   company?: InputMaybe<Scalars['String']>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   endDate?: InputMaybe<Scalars['Date']>;
+  occupation?: InputMaybe<Scalars['String']>;
   startDate?: InputMaybe<Scalars['Date']>;
-  tasks?: InputMaybe<Array<Scalars['String']>>;
+  tasks?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
@@ -1553,6 +1555,25 @@ export type ExperienceManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  occupation?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  occupation_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  occupation_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  occupation_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  occupation_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  occupation_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  occupation_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  occupation_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  occupation_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  occupation_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1587,16 +1608,25 @@ export type ExperienceManyWhereInput = {
   startDate_not?: InputMaybe<Scalars['Date']>;
   /** All values that are not contained in given list. */
   startDate_not_in?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>;
-  /** Matches if the field array contains *all* items provided to the filter and order does match */
-  tasks?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains *all* items provided to the filter */
-  tasks_contains_all?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contain any of the items provided to the filter */
-  tasks_contains_none?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains at least one item provided to the filter */
-  tasks_contains_some?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-  tasks_not?: InputMaybe<Array<Scalars['String']>>;
+  tasks?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  tasks_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  tasks_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  tasks_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  tasks_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  tasks_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  tasks_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  tasks_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  tasks_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  tasks_starts_with?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1624,6 +1654,8 @@ export enum ExperienceOrderByInput {
   EndDateDesc = 'endDate_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  OccupationAsc = 'occupation_ASC',
+  OccupationDesc = 'occupation_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   StartDateAsc = 'startDate_ASC',
@@ -1637,8 +1669,9 @@ export enum ExperienceOrderByInput {
 export type ExperienceUpdateInput = {
   company?: InputMaybe<Scalars['String']>;
   endDate?: InputMaybe<Scalars['Date']>;
+  occupation?: InputMaybe<Scalars['String']>;
   startDate?: InputMaybe<Scalars['Date']>;
-  tasks?: InputMaybe<Array<Scalars['String']>>;
+  tasks?: InputMaybe<Scalars['String']>;
 };
 
 export type ExperienceUpdateManyInlineInput = {
@@ -1661,8 +1694,9 @@ export type ExperienceUpdateManyInlineInput = {
 export type ExperienceUpdateManyInput = {
   company?: InputMaybe<Scalars['String']>;
   endDate?: InputMaybe<Scalars['Date']>;
+  occupation?: InputMaybe<Scalars['String']>;
   startDate?: InputMaybe<Scalars['Date']>;
-  tasks?: InputMaybe<Array<Scalars['String']>>;
+  tasks?: InputMaybe<Scalars['String']>;
 };
 
 export type ExperienceUpdateManyWithNestedWhereInput = {
@@ -1796,6 +1830,25 @@ export type ExperienceWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  occupation?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  occupation_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  occupation_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  occupation_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  occupation_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  occupation_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  occupation_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  occupation_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  occupation_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  occupation_starts_with?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1830,16 +1883,25 @@ export type ExperienceWhereInput = {
   startDate_not?: InputMaybe<Scalars['Date']>;
   /** All values that are not contained in given list. */
   startDate_not_in?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>;
-  /** Matches if the field array contains *all* items provided to the filter and order does match */
-  tasks?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains *all* items provided to the filter */
-  tasks_contains_all?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contain any of the items provided to the filter */
-  tasks_contains_none?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array contains at least one item provided to the filter */
-  tasks_contains_some?: InputMaybe<Array<Scalars['String']>>;
-  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
-  tasks_not?: InputMaybe<Array<Scalars['String']>>;
+  tasks?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  tasks_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  tasks_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  tasks_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  tasks_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  tasks_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  tasks_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  tasks_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  tasks_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  tasks_starts_with?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -7091,7 +7153,7 @@ export enum _SystemDateTimeFieldVariation {
 export type MyExperiencesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MyExperiencesQuery = { __typename?: 'Query', experiences: Array<{ __typename?: 'Experience', company?: string | null, startDate?: any | null, tasks: Array<string>, endDate?: any | null }> };
+export type MyExperiencesQuery = { __typename?: 'Query', experiences: Array<{ __typename?: 'Experience', company?: string | null, startDate?: any | null, tasks?: string | null, endDate?: any | null, occupation?: string | null }> };
 
 
 export const MyExperiencesDocument = gql`
@@ -7101,6 +7163,7 @@ export const MyExperiencesDocument = gql`
     startDate
     tasks
     endDate
+    occupation
   }
 }
     `;

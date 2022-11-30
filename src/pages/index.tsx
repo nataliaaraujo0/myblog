@@ -5,7 +5,7 @@ import { Empty } from "../components/Empty";
 import { Layout } from "../components/Layout";
 import { ListRepositories } from "../components/ListRepositories";
 import { PaginationItem } from "../components/PaginationItem/PaginationItem";
-import { Experience, Resume } from "../components/Resume";
+import { Experience } from "../components/Resume";
 import { SkeletonRepo } from "../components/SkeletonRepo";
 import { useMyExperiencesQuery } from "../generated/graphql";
 
