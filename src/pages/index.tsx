@@ -5,12 +5,16 @@ import { Empty } from "../components/Empty";
 import { Layout } from "../components/Layout";
 import { ListRepositories } from "../components/ListRepositories";
 import { PaginationItem } from "../components/PaginationItem/PaginationItem";
-import { Resume } from "../components/Resume";
+import { Experience, Resume } from "../components/Resume";
 import { SkeletonRepo } from "../components/SkeletonRepo";
 import { useMyExperiencesQuery } from "../generated/graphql";
 
 export default function Home() {
-  const { isLoading, data } = useQuery("repo", api.getRepos);
+  const { isLoading, data: repos } = useQuery("repo", api.getRepos);
+  const [{ data: experiences }] = useMyExperiencesQuery();
+
+  console.log(repos, "data");
+  console.log(experiences, "experiences");
   return (
     <>
       <Layout
@@ -19,9 +23,9 @@ export default function Home() {
       } */
 
         firstChild={
-          isLoading ? <SkeletonRepo /> : <ListRepositories repos={data} />
+          isLoading ? <SkeletonRepo /> : <ListRepositories repos={repos} />
         }
-        secondChild={<Resume />}
+        secondChild={<Experience experiences={experiences?.experiences} />}
       />
     </>
   );
