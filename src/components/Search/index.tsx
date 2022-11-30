@@ -1,7 +1,11 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { MagnifyingGlass } from "phosphor-react";
 
-export const Search = ({ ...rest }) => {
+type SearchProps = {
+  onChange?: any;
+  value?: any;
+};
+export const Search = ({ onChange = () => {}, value = "", ...rest }) => {
   return (
     <>
       <InputGroup w="20rem" {...rest}>
@@ -9,6 +13,10 @@ export const Search = ({ ...rest }) => {
           children={<MagnifyingGlass size={22} weight="bold" />}
         />
         <Input
+          value={value}
+          name="search"
+          type="text"
+          onChange={onChange}
           __css={{ color: "blue" }}
           placeholder="Search"
           variant="filled"

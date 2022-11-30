@@ -8,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { Sidebar } from "../Sidebar";
-import { Search } from "../Search";
 
 type LayoutProps = {
   firstChild?: ReactElement;
@@ -22,8 +21,6 @@ export const Layout = ({ firstChild, secondChild }: LayoutProps) => {
       </Flex>
       <Flex direction="column">
         <Flex w="900px" direction="column">
-          <Search style={{ marginBottom: "32px" }} />
-
           <Tabs variant="soft-rounded" colorScheme="purple">
             <TabList>
               <Tab borderRadius="4px">Projetos do Github</Tab>
