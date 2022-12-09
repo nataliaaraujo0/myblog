@@ -1,11 +1,14 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { MagnifyingGlass } from "phosphor-react";
+import { useRef } from "react";
 
 type SearchProps = {
   onChange?: any;
   value?: any;
 };
 export const Search = ({ onChange = () => {}, value = "", ...rest }) => {
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
   return (
     <>
       <InputGroup w="20rem" {...rest}>
@@ -23,6 +26,7 @@ export const Search = ({ onChange = () => {}, value = "", ...rest }) => {
           bg="#be396c"
           _hover={{ background: "#e73e80" }}
           _focus={{ background: "#e73e80" }}
+          ref={searchInputRef}
         />
       </InputGroup>
     </>
