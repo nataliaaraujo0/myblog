@@ -12,8 +12,13 @@ import { Sidebar } from "../Sidebar";
 type LayoutProps = {
   firstChild?: ReactElement;
   secondChild?: ReactElement;
+  thirdChild?: ReactElement;
 };
-export const Layout = ({ firstChild, secondChild }: LayoutProps) => {
+export const Layout = ({
+  firstChild,
+  secondChild,
+  thirdChild,
+}: LayoutProps) => {
   return (
     <Flex w="100%" h="100vh" padding="2rem" gap="2rem" justifyContent="center">
       <Flex w="300px" h="800px">
@@ -31,6 +36,7 @@ export const Layout = ({ firstChild, secondChild }: LayoutProps) => {
               <TabPanel>{secondChild}</TabPanel>
             </TabPanels>
           </Tabs>
+          <div>{thirdChild}</div>
         </Flex>
       </Flex>
     </Flex>

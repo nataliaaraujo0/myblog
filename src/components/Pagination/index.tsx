@@ -10,7 +10,7 @@ interface PaginationProps {
 
 export function Pagination({
   totalCountOfRegisters,
-  registerPerPage = 10,
+  registerPerPage = 9,
   currentPage = 1,
   onPageChange,
 }: PaginationProps) {
@@ -47,9 +47,6 @@ export function Pagination({
       justify="space-between"
       align="center"
     >
-      <Box>
-        <strong>0</strong> - <strong>10</strong> de <strong>100</strong>
-      </Box>
       <Stack direction="row" spacing="2">
         {currentPage > 1 + siblingsCount && (
           <>

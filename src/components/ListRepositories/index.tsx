@@ -21,7 +21,9 @@ export const ListRepositories = ({
   const [search, setSearch] = useState("");
 
   const filteredRepos =
-    search.length > 0 ? repos.filter((repo) => repo.name.includes(search)) : [];
+    search.length > 0
+      ? repos.repos?.filter((repo) => repo.name.includes(search))
+      : [];
 
   return (
     <>
@@ -36,7 +38,7 @@ export const ListRepositories = ({
       >
         {search.length > 0 ? (
           <>
-            {filteredRepos.map((repo) => {
+            {filteredRepos?.map((repo) => {
               return (
                 <Card bg="purple.800" onClick={onClick} key={repo.id} {...rest}>
                   <CardHeader>
@@ -60,7 +62,7 @@ export const ListRepositories = ({
           </>
         ) : (
           <>
-            {repos.map((repo) => {
+            {repos.repos?.map((repo) => {
               return (
                 <Card bg="purple.800" onClick={onClick} key={repo.id} {...rest}>
                   <CardHeader>
